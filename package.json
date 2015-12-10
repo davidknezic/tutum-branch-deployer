@@ -1,0 +1,34 @@
+{
+  "name": "tutum-tagger",
+  "version": "1.0.0",
+  "description": "Push branches to GitHub, get tags created on Tutum.",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/babel-node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axa-ch/tutum-tagger.git"
+  },
+  "keywords": [
+    "tutum",
+    "github",
+    "tag"
+  ],
+  "author": "David Knezić <davidknezic@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidknezic/tutum-tagger/issues"
+  },
+  "homepage": "https://github.com/axa-ch/tutum-tagger#readme",
+  "dependencies": {
+    "babel-cli": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "body-parser": "^1.14.1",
+    "colors": "^1.1.2",
+    "express": "^4.13.3",
+    "superagent": "^1.4.0",
+    "superagent-promise": "^1.0.3"
+  }
+}
