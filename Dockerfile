@@ -1,4 +1,5 @@
-USE node:latest
+FROM node:latest
+EXPOSE 1337
 
 ENV EVENT_SECRET ''
 ENV TUTUM_USERNAME ''
