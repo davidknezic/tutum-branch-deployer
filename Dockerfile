@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:onbuild
 EXPOSE 1337
 
 ENV EVENT_SECRET ''
