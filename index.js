@@ -4,6 +4,7 @@ import createGithubEvents from './lib/github-events'
 import createTutumEvents from './lib/tutum-events'
 import colors from 'colors'
 import Bacon from 'baconjs'
+import deployToTutum from './lib/deploy-to-tutum'
 
 let debug = require('debug')('tutum-tagger')
 
@@ -45,3 +46,6 @@ tutum.authenticate({
 github.user.get({}, function (err, user) {
   debug(`Successfully ${'signed in'.bgGreen.black} as ${user.login.cyan}`)
 })
+
+Bacon.fromEvent(githubEvents, 'push')
+  .flatMap((event) => deployToTutum(event, tutum, tutumEvents, github))
