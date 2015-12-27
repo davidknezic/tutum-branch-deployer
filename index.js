@@ -5,6 +5,7 @@ import createTutumEvents from './lib/tutum-events'
 import colors from 'colors'
 import Bacon from 'baconjs'
 import deployToTutum from './lib/deploy-to-tutum'
+import answerToPing from './lib/answer-to-ping'
 
 let debug = require('debug')('tutum-tagger')
 
@@ -49,3 +50,6 @@ github.user.get({}, function (err, user) {
 
 Bacon.fromEvent(githubEvents, 'push')
   .flatMap((event) => deployToTutum(event, tutum, tutumEvents, github))
+
+Bacon.fromEvent(githubEvents, 'ping')
+  .flatMap((event) => answerToPing(event))
