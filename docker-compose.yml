@@ -1,0 +1,10 @@
+tutum-autodeploy:
+  ports:
+    - "80:80"
+  environment:
+    - GITHUB_WEBHOOK_SECRET=your_github_webhook_secret
+    - GITHUB_USERNAME=your_github_username
+    - GITHUB_APIKEY=your_github_apikey
+    - TUTUM_USERNAME=your_tutum_username
+    - TUTUM_APIKEY=your_tutum_apikey
+    - TUTUM_IMAGE=your_tutum_image_name
