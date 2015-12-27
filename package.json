@@ -35,6 +35,7 @@
     "superagent": "^1.4.0",
     "superagent-promise": "^1.0.3",
     "supertest": "^1.1.0",
+    "url-template": "^2.0.6",
     "ws": "^0.8.1"
   }
 }
