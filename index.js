@@ -41,3 +41,7 @@ tutum.authenticate({
   username: process.env.TUTUM_USERNAME,
   apikey: process.env.TUTUM_APIKEY
 })
+
+github.user.get({}, function (err, user) {
+  debug(`Successfully ${'signed in'.bgGreen.black} as ${user.login.cyan}`)
+})
