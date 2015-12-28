@@ -56,11 +56,19 @@ what environment variables it need and so on.
 That's what the `service.json` file is for. Take a look at the
 `service.sample.json` file to get an idea what's possible.
 
-## Contibute
+## Contribute
 
 Feel free to fork this project and extend it. If you think you've
 built something others could use too, create a pull request to
 get it back into the main project.
+
+## Test
+
+To run the tests, use the following command:
+
+```sh
+npm test
+```
 
 ## License
 
