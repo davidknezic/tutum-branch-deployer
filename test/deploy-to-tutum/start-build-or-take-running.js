@@ -1,6 +1,6 @@
 import Bacon from 'baconjs'
 import { expect } from 'chai'
-import { expectation, mock } from 'sinon'
+import { expectation } from 'sinon'
 import startBuildOrTakeRunning from  '../../lib/deploy-to-tutum/start-build-or-take-running'
 
 describe('deploy to tutum', function () {
