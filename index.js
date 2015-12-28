@@ -50,10 +50,16 @@ github.user.get({}, function (err, user) {
 })
 
 Bacon.fromEvent(githubEvents, 'push')
+  .doAction((event) => debug(`Got a push event.`))
   .flatMap((event) => deployToTutum(event, tutum, tutumEvents, github))
+  .onValue((result) => debug(`Push event processed.`))
 
 Bacon.fromEvent(githubEvents, 'delete')
+  .doAction((event) => debug(`Got a delete event.`))
   .flatMap((event) => removeFromTutum(event))
+  .onValue((result) => debug(`Delete event processed.`))
 
 Bacon.fromEvent(githubEvents, 'ping')
+  .doAction((event) => debug(`Got a ping event.`))
   .flatMap((event) => answerToPing(event))
+  .onValue((result) => debug(`Ping event processed.`))
