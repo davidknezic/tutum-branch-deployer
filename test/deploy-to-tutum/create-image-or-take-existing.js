@@ -6,6 +6,7 @@ import createImageOrTakeExisting from  '../../lib/deploy-to-tutum/create-image-o
 describe('deploy to tutum', function () {
   let fakeTutum = {}
   fakeTutum.getImage = stub()
+  fakeTutum.getImage
     .withArgs('tutum.co/axach/style-guide')
     .returns(Promise.resolve({
       resource_uri: '/api/v1/image/tutum.co/axach/style-guide/',
@@ -14,6 +15,7 @@ describe('deploy to tutum', function () {
         repository: 'style-guide'
       }
     }))
+  fakeTutum.getImage
     .withArgs('tutum.co/axach/style-guide-new')
     .returns(Promise.reject('not found'))
 
