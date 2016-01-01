@@ -20,6 +20,11 @@ fakeTutum.listServices
 fakeTutum.listServices
   .onSecondCall()
   .returns(Promise.resolve([services['something-else']]))
+fakeTutum.createService = expectation.create('createService')
+fakeTutum.createService
+  .returns(Promise.resolve({
+    image_name: 'tutum.co/axach/style-guide:latest'
+  }))
 
 describe('deploy to tutum', function () {
 
@@ -42,16 +47,14 @@ describe('deploy to tutum', function () {
     })
 
     it('it should create a new service', function (done) {
-      fakeTutum.createService = expectation.create('createService')
-        .once()
-        .returns(Promise.resolve({
-          image_name: 'tutum.co/axach/style-guide:latest'
-        }))
-
       createServiceOrTakeExisting(image, buildSetting, fakeTutum)
         .onValue((service) => {
+          expect(fakeTutum.createService.calledOnce).to.be.true
+          expect(fakeTutum.createService.calledWithMatch({
+            image: 'tutum.co/axach/style-guide:latest',
+            name: 'develop'
+          })).to.be.true
           expect(service).to.have.property('image_name', 'tutum.co/axach/style-guide:latest')
-          fakeTutum.createService.verify()
           done()
         })
     })
