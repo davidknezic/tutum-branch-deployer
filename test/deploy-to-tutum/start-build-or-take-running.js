@@ -5,7 +5,7 @@ import startBuildOrTakeRunning from  '../../lib/deploy-to-tutum/start-build-or-t
 
 describe('deploy to tutum', function () {
   describe('start build or take running', function () {
-    it('it should start a fresh new build that succeeds', function (done) {
+    it('should start a fresh new build that succeeds', function (done) {
       let buildSetting = {
         resource_uri: '/api/v1/image/tutum.co/axach/style-guide/buildsetting/latest/',
         state: 'Success'
@@ -27,7 +27,7 @@ describe('deploy to tutum', function () {
         })
     })
 
-    it('it should take a running build that succeeds', function (done) {
+    it('should take a running build that succeeds', function (done) {
       let buildSetting = {
         resource_uri: '/api/v1/image/tutum.co/axach/style-guide/buildsetting/latest/',
         state: 'Building'
@@ -47,7 +47,7 @@ describe('deploy to tutum', function () {
         })
     })
 
-    it('it should start a fresh new build that fails', function (done) {
+    it('should start a fresh new build that fails', function (done) {
       let buildSetting = {
         resource_uri: '/api/v1/image/tutum.co/axach/style-guide/buildsetting/latest/',
         state: 'Success'
@@ -69,7 +69,7 @@ describe('deploy to tutum', function () {
         })
     })
 
-    it('it should take a running build that fails', function (done) {
+    it('should take a running build that fails', function (done) {
       let buildSetting = {
         resource_uri: '/api/v1/image/tutum.co/axach/style-guide/buildsetting/latest/',
         state: 'Building'

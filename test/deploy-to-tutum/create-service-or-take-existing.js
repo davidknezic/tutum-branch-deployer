@@ -38,7 +38,7 @@ describe('deploy to tutum', function () {
       branch: 'develop'
     }
 
-    it('it should take an existing service', function (done) {
+    it('should take an existing service', function (done) {
       createServiceOrTakeExisting(image, buildSetting, fakeTutum)
         .onValue((service) => {
           expect(service).to.have.property('image_name', 'tutum.co/axach/style-guide:latest')
@@ -46,7 +46,7 @@ describe('deploy to tutum', function () {
         })
     })
 
-    it('it should create a new service', function (done) {
+    it('should create a new service', function (done) {
       createServiceOrTakeExisting(image, buildSetting, fakeTutum)
         .onValue((service) => {
           expect(fakeTutum.createService.calledOnce).to.be.true

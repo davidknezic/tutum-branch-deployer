@@ -36,7 +36,7 @@ describe('deploy to tutum', function () {
       }
     }
 
-    it('it should take an existing image', function (done) {
+    it('should take an existing image', function (done) {
       let name = 'tutum.co/axach/style-guide'
 
       createImageOrTakeExisting(name, repository, fakeTutum)
@@ -49,7 +49,7 @@ describe('deploy to tutum', function () {
         })
     })
 
-    it('it should create a new image', function (done) {
+    it('should create a new image', function (done) {
       let name = 'tutum.co/axach/style-guide-new'
 
       createImageOrTakeExisting(name, repository, fakeTutum)

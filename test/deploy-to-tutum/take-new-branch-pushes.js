@@ -4,7 +4,7 @@ import takeNewBranchPushes from  '../../lib/deploy-to-tutum/take-new-branch-push
 
 describe('deploy to tutum', function () {
   describe('take new branch pushes', function () {
-    it('it should take push creating new branch', function (done) {
+    it('should take push creating new branch', function (done) {
       let payload = {
         ref: 'refs/heads/bugfix/fix-the-main-menu',
         created: true,
@@ -30,7 +30,7 @@ describe('deploy to tutum', function () {
         })
     })
 
-    it('it should reject push not creating new branch', function (done) {
+    it('should reject push not creating new branch', function (done) {
       let payload = {
         ref: 'refs/heads/bugfix/fix-the-main-menu',
         created: false,

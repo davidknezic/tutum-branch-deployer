@@ -45,7 +45,7 @@ describe('deploy to tutum', function () {
       }
     }
 
-    it('it should take an existing tag', function (done) {
+    it('should take an existing tag', function (done) {
       let branch = 'one-branch'
 
       createTagOrTakeExisting(image, branch, fakeTutum)
@@ -58,7 +58,7 @@ describe('deploy to tutum', function () {
         })
     })
 
-    it('it should create a new tag', function (done) {
+    it('should create a new tag', function (done) {
       let branch = 'another-branch'
 
       createTagOrTakeExisting(image, branch, fakeTutum)
