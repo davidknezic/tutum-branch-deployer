@@ -1,6 +1,6 @@
 import Bacon from 'baconjs'
 import { expect } from 'chai'
-import { expectation, stub } from 'sinon'
+import { stub } from 'sinon'
 import createServiceOrTakeExisting from  '../../lib/deploy-to-tutum/create-service-or-take-existing'
 
 const services = {
@@ -16,11 +16,11 @@ let fakeTutum = {}
 fakeTutum.listServices = stub()
 fakeTutum.listServices
   .onFirstCall()
-  .returns(Promise.resolve([services['style-guide'], services['something-else']]))
+  .returns(Promise.resolve({ objects: [services['style-guide'], services['something-else']] }))
 fakeTutum.listServices
   .onSecondCall()
-  .returns(Promise.resolve([services['something-else']]))
-fakeTutum.createService = expectation.create('createService')
+  .returns(Promise.resolve({ objects: [services['something-else']] }))
+fakeTutum.createService = stub()
 fakeTutum.createService
   .returns(Promise.resolve({
     image_name: 'tutum.co/axach/style-guide:latest'
