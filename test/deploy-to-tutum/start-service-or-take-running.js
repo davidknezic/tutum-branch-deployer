@@ -27,8 +27,7 @@ describe('deploy to tutum', function () {
       })
 
       startServiceOrTakeRunning(service, fakeTutum, fakeTutumStream)
-        .onValue((isSuccessful) => {
-          expect(isSuccessful).to.be.true
+        .onValue(() => {
           fakeTutum.startService.verify()
           done()
         })
@@ -49,8 +48,7 @@ describe('deploy to tutum', function () {
       })
 
       startServiceOrTakeRunning(service, fakeTutum, fakeTutumStream)
-        .onValue((isSuccessful) => {
-          expect(isSuccessful).to.be.true
+        .onValue(() => {
           fakeTutum.startService.verify()
           done()
         })
@@ -76,8 +74,7 @@ describe('deploy to tutum', function () {
       })
 
       startServiceOrTakeRunning(service, fakeTutum, fakeTutumStream)
-        .onValue((isSuccessful) => {
-          expect(isSuccessful).to.be.false
+        .onError(() => {
           fakeTutum.startService.verify()
           done()
         })
@@ -102,8 +99,7 @@ describe('deploy to tutum', function () {
         }))
 
       startServiceOrTakeRunning(service, fakeTutum, fakeTutumStream)
-        .onValue((isSuccessful) => {
-          expect(isSuccessful).to.be.false
+        .onError(() => {
           fakeTutum.startService.verify()
           done()
         })
