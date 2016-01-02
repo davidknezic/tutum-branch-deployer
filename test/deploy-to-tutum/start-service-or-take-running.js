@@ -81,7 +81,7 @@ describe('deploy to tutum', function () {
         })
     })
 
-    it('should take a running service start that fails', function (done) {
+    it('should take a running service start that fails after 6s long false positive', function (done) {
       let service = {
         resource_uri: '/api/v1/service/74352707-0c01-4b3a-8024-ed2334ad81f2/',
         state: 'Starting'
@@ -91,9 +91,13 @@ describe('deploy to tutum', function () {
       fakeTutum.startService = expectation.create('startService').never()
 
       let fakeTutumStream = Bacon.once({
-        resource_uri: service.resource_uri,
-        state: 'Stopped'
-      })
+          resource_uri: service.resource_uri,
+          state: 'Running'
+        })
+        .merge(Bacon.later(6000, {
+          resource_uri: service.resource_uri,
+          state: 'Stopped'
+        }))
 
       startServiceOrTakeRunning(service, fakeTutum, fakeTutumStream)
         .onValue((isSuccessful) => {
