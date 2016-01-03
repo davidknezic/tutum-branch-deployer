@@ -6,21 +6,23 @@ export default function createService(push, image, buildSetting, done) {
 
   let service = {
     image: `${image.name}:${buildSetting.tag}`,
-    name: slug(buildSetting.branch)
+    name: slug(buildSetting.branch),
+    container_ports: [{
+      protocol: 'tcp',
+      inner_port: 3000,
+      published: true
+    }],
+    container_envvars: [{
+      key: 'VIRTUAL_PATH',
+      value: 'buildSetting.branch'
+    }],
+    tags: [
+      'style-guide'
+    ]
 
     // target_num_containers: 1,
     // run_command: null,
     // entrypoint: null,
-    // container_ports: [{
-    //   protocol: 'tcp',
-    //   inner_port: 80,
-    //   outer_port: 80,
-    //   published: false
-    // }],
-    // container_envvars: [{
-    //   key: 'DB_PASSWORD',
-    //   value: 'mypass'
-    // }],
     // linked_to_service: [{
     //   to_service: '/api/v1/service/80ff1635-2d56-478d-a97f-9b59c720e513/',
     //   name: 'db'
@@ -37,7 +39,6 @@ export default function createService(push, image, buildSetting, done) {
     // roles: ['global'],
     // privileged: false,
     // deployment_strategy: 'EMPTIEST_NODE',
-    // tags: ['mytag'],
     // autoredeploy: false,
     // net: 'bridge',
     // pid: 'none',
