@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import { expectation } from 'sinon'
 import startServiceOrTakeRunning from  '../../lib/deploy-to-tutum/start-service-or-take-running'
 
-process.env.TUTUM_WAIT_TIME = 1500
+process.env.TUTUM_WAIT_TIME = 200
 
 describe('deploy to tutum', function () {
   describe('start service or take running', function () {
@@ -93,7 +93,7 @@ describe('deploy to tutum', function () {
           resource_uri: service.resource_uri,
           state: 'Running'
         })
-        .merge(Bacon.later(1000, {
+        .merge(Bacon.later(100, {
           resource_uri: service.resource_uri,
           state: 'Stopped'
         }))
