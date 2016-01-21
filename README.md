@@ -1,4 +1,4 @@
-![Tutum Autodeploy](https://slack-files.com/T08J724LX-F0K1N6LM6-d75104f8aa)
+![Tutum Autodeploy](https://files.slack.com/files-pri/T08J724LX-F0K1N6LM6/slack_for_ios_upload.png?pub_secret=d75104f8aa)
 
 # Tutum Autodeploy
 
