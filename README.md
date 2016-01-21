@@ -1,4 +1,4 @@
-> **Watch out!** This is still in development.
+![Tutum Autodeploy](https://files.slack.com/files-pri/T08J724LX-F0K1KUV9V/tutum_tagger.png)
 
 # Tutum Autodeploy
 
