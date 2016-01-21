@@ -1,4 +1,4 @@
-![Tutum Autodeploy](https://files.slack.com/files-pri/T08J724LX-F0K1KUV9V/tutum_tagger.png)
+![Tutum Autodeploy](https://slack-files.com/T08J724LX-F0K1N6LM6-d75104f8aa)
 
 # Tutum Autodeploy
 
