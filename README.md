@@ -1,6 +1,6 @@
 <img src="https://files.slack.com/files-pri/T08J724LX-F0K1N6LM6/slack_for_ios_upload.png?pub_secret=d75104f8aa" width="300" alt="Tutum Autodeploy" />
 
-# Tutum Autodeploy
+# Tutum Branch Deployer
 
 You open a pull request for your next unicorn app. This tool automatically
 deploys it to Tutum, the Docker platform and posts the URL to the
